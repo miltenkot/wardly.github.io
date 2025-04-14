@@ -2,15 +2,22 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
   color: #333;
+  font-family: 'Nunito', sans-serif;
 }
 
 header {
-  background-color: #007bff;
-  color: white;
   padding: 20px 0;
   text-align: center;
+}
+
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 nav {
@@ -19,7 +26,6 @@ nav {
 
 nav a {
   margin: 0 15px;
-  color: white;
   text-decoration: none;
   font-weight: bold;
   cursor: pointer;
@@ -61,10 +67,6 @@ section ul li {
   margin-bottom: 10px;
 }
 
-footer {
-  background-color: #efefef;
-  text-align: center;
-  padding: 20px 10px;
-  font-size: 0.9em;
-  color: #666;
+h1, h2, h3 {
+  font-family: 'Nunito', sans-serif;
 }
