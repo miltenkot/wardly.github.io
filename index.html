@@ -11,15 +11,15 @@
   <header>
     <h1>Moja Aplikacja 📱</h1>
     <nav>
-      <a href="#features">Features</a>
-      <a href="#download">Download</a>
-      <a href="#contact">Contact</a>
-      <a href="#privacy">Privacy Policy</a>
+      <a href="#features" data-target="features">Features</a>
+      <a href="#download" data-target="download">Download</a>
+      <a href="#contact" data-target="contact">Contact</a>
+      <a href="#privacy" data-target="privacy">Privacy Policy</a>
     </nav>
   </header>
 
   <main>
-    <section id="features">
+    <section id="features" class="page active">
       <h2>Features</h2>
       <ul>
         <li>📅 Planowanie codziennych zadań</li>
@@ -29,7 +29,7 @@
       </ul>
     </section>
 
-    <section id="download">
+    <section id="download" class="page">
       <h2>Download</h2>
       <p>Nasza aplikacja jest dostępna na:</p>
       <ul>
@@ -38,13 +38,13 @@
       </ul>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="page">
       <h2>Contact</h2>
       <p>Masz pytania? Napisz do nas:</p>
       <p>Email: <a href="mailto:kontakt@mojaaplikacja.pl">kontakt@mojaaplikacja.pl</a></p>
     </section>
 
-    <section id="privacy">
+    <section id="privacy" class="page">
       <h2>Privacy Policy</h2>
       <p>Szanujemy Twoją prywatność. Aplikacja nie zbiera danych osobowych bez Twojej zgody.</p>
       <p>Więcej informacji znajdziesz w pełnej polityce prywatności (tu będzie link).</p>
@@ -54,6 +54,26 @@
   <footer>
     <p>© 2025 Moja Aplikacja. Wszelkie prawa zastrzeżone.</p>
   </footer>
+
+  <script>
+    const links = document.querySelectorAll('nav a');
+    const pages = document.querySelectorAll('.page');
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('data-target');
+
+        pages.forEach(page => {
+          if (page.id === targetId) {
+            page.classList.add('active');
+          } else {
+            page.classList.remove('active');
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
