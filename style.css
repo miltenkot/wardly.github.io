@@ -2,7 +2,6 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  color: #333;
   font-family: 'Nunito', sans-serif;
 }
 
@@ -18,10 +17,6 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-nav {
-  margin-top: 10px;
 }
 
 nav a {
