@@ -1,13 +1,18 @@
-body {
-  font-family: sans-serif;
+/* Make sure full height and flex layout is applied */
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Nunito', sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Header styling */
 header {
   padding: 20px 0;
   text-align: center;
+  border-bottom: 1px solid #ddd;
 }
 
 header .container {
@@ -19,24 +24,30 @@ header .container {
   justify-content: space-between;
 }
 
+/* Navigation links */
 nav a {
   margin: 0 15px;
   text-decoration: none;
+  text-decoration: none;
   font-weight: bold;
   cursor: pointer;
+  color: #000;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  color: #000;
 }
 
+/* Main section grows to push footer down */
 main {
+  flex: 1;
   padding: 40px 20px;
   max-width: 800px;
-  margin: auto;
-  min-height: 400px;
+  margin: 0 auto;
 }
 
+/* Pages setup */
 .page {
   display: none;
   opacity: 0;
@@ -48,6 +59,7 @@ main {
   opacity: 1;
 }
 
+/* Headings and content */
 section h2 {
   font-size: 2em;
   margin-bottom: 20px;
@@ -62,6 +74,53 @@ section ul li {
   margin-bottom: 10px;
 }
 
+/* Font styling */
 h1, h2, h3 {
   font-family: 'Nunito', sans-serif;
+}
+
+/* Footer sticks to bottom */
+footer {
+  padding: 1em 0;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .images {
+    margin-top: 2rem;
+  }
+}
+
+.images {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.images img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap; /* ważne dla responsywności */
+  padding: 2rem 0;
+}
+
+.text {
+  flex: 1 1 300px;
+  max-width: 500px;
 }
