@@ -153,6 +153,15 @@
         }
       });
     });
+    // Show the correct section if URL has a hash on load
+      window.addEventListener('load', () => {
+          const hash = window.location.hash.replace('#', '');
+          const targetPage = document.getElementById(hash);
+          if (targetPage) {
+              pages.forEach(page => page.classList.remove('active'));
+              targetPage.classList.add('active');
+          }
+      });
   </script>
 
 </body>
