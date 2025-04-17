@@ -24,10 +24,24 @@ header .container {
   justify-content: space-between;
 }
 
+/* Hamburger button */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 /* Navigation links */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 nav a {
   margin: 0 15px;
-  text-decoration: none;
   text-decoration: none;
   font-weight: bold;
   cursor: pointer;
@@ -86,6 +100,7 @@ footer {
   font-size: 0.9em;
 }
 
+/* Responsive tweaks */
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
@@ -94,6 +109,26 @@ footer {
 
   .images {
     margin-top: 2rem;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 }
 

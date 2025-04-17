@@ -18,17 +18,21 @@
 
 <body>
 
-  <header>
-    <div class="container">
-      <h1><img src="logo.png" alt="App Logo"> Wardly</h1>
-      <nav>
-        <a href="#features" data-target="features">Home</a>
-        <a href="#download" data-target="download">Download</a>
-        <a href="#contact" data-target="contact">Contact</a>
-        <a href="#privacy" data-target="privacy">Privacy Policy</a>
-      </nav>
-    </div>
-  </header>
+    <header>
+      <div class="container">
+        <h1><img src="logo.png" alt="App Logo"> Wardly</h1>
+        
+        <!-- Hamburger icon -->
+        <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+
+        <nav class="nav-links">
+          <a href="#features" data-target="features">Home</a>
+          <a href="#download" data-target="download">Download</a>
+          <a href="#contact" data-target="contact">Contact</a>
+          <a href="#privacy" data-target="privacy">Privacy Policy</a>
+        </nav>
+      </div>
+    </header>
 
   <main>
       <section id="features" class="page active">
@@ -161,6 +165,14 @@
               pages.forEach(page => page.classList.remove('active'));
               targetPage.classList.add('active');
           }
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+        const toggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        toggle.addEventListener('click', () => {
+          nav.classList.toggle('show');
+        });
       });
   </script>
 
